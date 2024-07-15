@@ -1,0 +1,16 @@
+com\uam\UamCompartido\JPA\Unidad.class
+com\uam\UamCompartido\DAO\TrimestreDAO.class
+com\uam\UamCompartido\DAO\TrimestreDAOImplementation.class
+com\uam\UamCompartido\UamCompartidoApplication.class
+com\uam\UamCompartido\DataConfig\DataSourceConfig.class
+com\uam\UamCompartido\DAO\TroncoDAO.class
+com\uam\UamCompartido\DAO\UnidadDAOImplementation.class
+com\uam\UamCompartido\DAO\UnidadDAO.class
+com\uam\UamCompartido\DAO\UeaDAOImplementation.class
+com\uam\UamCompartido\DAO\TroncoDAOImplementation.class
+com\uam\UamCompartido\Controller\UEAController.class
+com\uam\UamCompartido\JPA\UEA.class
+com\uam\UamCompartido\DAO\UeaDAO.class
+com\uam\UamCompartido\JPA\Trimestre.class
+com\uam\UamCompartido\JPA\Tronco.class
+com\uam\UamCompartido\Controller\IndexController.class
