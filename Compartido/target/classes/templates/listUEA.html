@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html lang="es" xmlns:th="https://www.thymeleaf.org">
+<head th:replace="~{layout :: header}">
+</head>
+<body>
+<div th:insert="~{layout :: navbar}"></div>
+
+<div class="row justify-content-center mt-5">
+    <div class="container mt-5 col-lg-8 text-white">
+        <h2 class="text-center">UEAs en plataforma</h2>
+        <div class="container col-lg-4">
+            <form class="form-inline my-2 my-lg-0"  th:action="@{/UEA/BuscarUEA}" method="get">
+                <input class="form-control mr-sm-2 mb-2" type="search" name="busqueda" placeholder="Búsqueda por clave" aria-label="Search">
+                <button class="btn btn-success mb-2" type="submit">Buscar</button>
+            </form>
+        </div>
+
+        <table class="table table-dark table-striped text-center">
+            <thead>
+            <tr>
+                <th scope="col">Clave</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Unidad</th>
+                <th scope="col">Tronco</th>
+                <th scope="col">Trimestre</th>
+                <th scope="col">Créditos</th>
+                <th scope="col">Acción</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="uea : ${ueas}">
+                <td th:text="${uea.Clave}"></td>
+                <td th:text="${uea.Nombre}"></td>
+                <td th:text="${uea.Unidad.Nombre}"></td>
+                <td th:text="${uea.Tronco.Nombre}"></td>
+                <td th:text="${uea.Trimestre.Nombre}"></td>
+                <td th:text="${uea.Creditos}"></td>
+                <td>
+                    <a class="btn btn-warning m-2 col-7" th:href="@{'/UEA/EditarUEA/' + ${uea.Clave}}"><i
+                            class="bi bi-pencil"></i></a>
+                    <a class="btn btn-danger m-2 col-7"
+                       th:href="@{/UEA/EliminarUEA/{ClaveUEA} (ClaveUEA = ${uea.Clave}) }"><i
+                            class="bi bi-trash"></i></a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
